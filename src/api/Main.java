@@ -17,6 +17,10 @@ public class Main
         System.out.printf("The ID of the product is: %d\n", eggs.getId());
         System.out.printf("The type of the product is: %s\n", eggs.getType());
 
+        /*
+        * testing how a commit works
+        */
+
     }
 
 }
