@@ -25,3 +25,8 @@ Założenia:
 - Komunikuje się z bazą danych by pobrac info o produktach i stanie
 - Klient może przegladać asortyment dostępnych produktów
 - Klient może dodać dostpne produkty do koszyka i kupić
+
+---
+
+**Updates:**
+- added unique ID generator

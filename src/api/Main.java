@@ -9,17 +9,9 @@ public class Main
     public static void main(String[] args)
     {
 
-        System.out.print("Witaj w strefie Biedronki!\nTylko najświeższe owoce.\nSwieże jaja, eleganckie wypieki.\n\n");
-        boolean isShopping = true;
+        System.out.print("Welcome to the Tesco Zone!\nOnly the freshest products.\n\n");
 
-        Eggs eggs = new Eggs(1, 12, Type.FOOD, "Eggs very smaczne");
-
-        System.out.printf("The ID of the product is: %d\n", eggs.getId());
-        System.out.printf("The type of the product is: %s\n", eggs.getType());
-
-        /*
-        * testing how a commit works
-        */
+        Database.addItem();
 
     }
 

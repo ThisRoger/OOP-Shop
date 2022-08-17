@@ -1,17 +1,16 @@
 package api.models;
+import api.Database;
 
 abstract class Product
 {
-    private int ID = 0;
     private int id;
     private int price;
     private Type type;
     private String name;
 
-    public Product(int id, int price, Type type, String name)
+    public Product(int price, Type type, String name)
     {
-        ID++;
-        this.id = id;
+        setId(Database.newID());
         this.price = price;
         this.type = type;
         this.name = name;
