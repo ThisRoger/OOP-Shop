@@ -1,19 +1,21 @@
 package api.models;
-import api.Database;
 
-abstract class Product
+import api.repositories.functions.CreateId;
+// I just wanted my entire project to be green
+
+public abstract class Product
 {
     private int id;
     private int price;
     private Type type;
     private String name;
 
-    public Product(int price, Type type, String name)
+    public Product(String name, Type type, int price)
     {
-        setId(Database.newID());
-        this.price = price;
-        this.type = type;
+        setId(CreateId.newId());
         this.name = name;
+        this.type = type;
+        this.price = price;
     }
 
     public int getId() {
