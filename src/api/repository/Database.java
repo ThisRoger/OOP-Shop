@@ -1,4 +1,4 @@
-package api.repositories;
+package api.repository;
 
 import api.models.Product;
 import java.util.ArrayList;

@@ -1,20 +1,14 @@
 package api;
 
-import api.repositories.functions.MainMenu;
+import api.repository.Shop.Shop;
 
 
 public class Main
 {
-
-
     public static void main(String[] args)
     {
 
-
-        System.out.print("Welcome to the Tesco Zone!\nOnly the freshest products.\n\n");
-
-        MainMenu.shopMenu();
-
+        Shop shopping = new Shop();
+        shopping.shopMenu();
     }
-
 }

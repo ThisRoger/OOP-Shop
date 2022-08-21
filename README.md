@@ -35,5 +35,9 @@ W stylu aktywnego menu (np: while/do while jak w kółko i krzyżyk)
 Utworzyć klasę która będzie obłsugiwać wprowadzone przez użytkownika komendy
 
 ---
-**Updates:**
-- added unique ID generator
+**To Do:**
+- 
+- Create the shop menu
+- Create Menu options (adding, sorting, database information, etc.)
+- Implement a simple shopping system
+- After all of that, see if you can implement an editor

@@ -1,16 +1,16 @@
 package api.models;
 
-import api.repositories.functions.CreateId;
-// I just wanted my entire project to be green
+import api.repository.functions.CreateId;
+
 
 public abstract class Product
 {
-    private int id;
-    private int price;
+    private int id;     // nie do końca rozumiem o co chodzi z ustawieniem ID jako final
+    private double price;
     private Type type;
     private String name;
 
-    public Product(String name, Type type, int price)
+    public Product(String name, Type type, double price)
     {
         setId(CreateId.newId());
         this.name = name;
@@ -22,7 +22,7 @@ public abstract class Product
         return id;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -38,7 +38,7 @@ public abstract class Product
         this.id = id;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
