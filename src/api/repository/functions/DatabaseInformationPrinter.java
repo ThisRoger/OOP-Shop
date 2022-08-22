@@ -1,12 +1,12 @@
 package api.repository.functions;
 
-
 import api.models.Type;
 import api.repository.productsDatabase;
 
-public class DatabaseInformation
+
+public class DatabaseInformationPrinter
 {
-    public void callInformation(productsDatabase database)
+    public void databaseStatusCall(productsDatabase database)
     {
 
         System.out.printf("\nAmount of items in shop: %d" ,database.products.size());

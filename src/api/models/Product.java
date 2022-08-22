@@ -5,7 +5,7 @@ import api.repository.functions.ProductIdentityGenerator;
 
 public abstract class Product
 {
-    private int id;     // nie do końca rozumiem o co chodzi z ustawieniem ID jako final
+    private int id;
     private double price;
     private Type type;
     private String name;

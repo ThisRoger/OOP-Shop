@@ -1,7 +1,6 @@
 package api.models;
 
 
-// I don't really know what happened here
 public enum Type
 {
     FOOD("This is food."),
@@ -10,7 +9,7 @@ public enum Type
 
    private final String name;
 
-   private Type(String name)        // constructor
+   Type(String name)
    {
        this.name = name;
    }

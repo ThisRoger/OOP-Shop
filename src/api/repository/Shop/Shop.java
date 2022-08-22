@@ -3,7 +3,7 @@ package api.repository.Shop;
 import api.repository.productsDatabase;
 import java.util.Scanner;
 import api.repository.functions.*;
-import tests.DatabaseCollection;    // import for testing
+import utility.ProductsWarehouse;    // import for testing
 
 
 public class Shop
@@ -26,7 +26,7 @@ public class Shop
     public void startShopping()
     {
         System.out.print("Welcome to the Tesco Zone!\nOnly the freshest products.\n\n");
-        DatabaseCollection.testCollection(database);        // Testing by adding a few products into the database list
+        ProductsWarehouse.testCollection(database);        // Testing by adding a few products into the database list
         boolean isShopping = true;
 
         while(isShopping)

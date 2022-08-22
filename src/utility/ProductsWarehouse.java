@@ -1,4 +1,4 @@
-package tests;
+package utility;
 import api.models.*;
 import api.models.Type;
 import api.repository.productsDatabase;
@@ -8,7 +8,7 @@ import api.repository.productsDatabase;
 * new items manually (still possible through the shop menu)
 */
 
-public class DatabaseCollection
+public class ProductsWarehouse
 {
     public static void testCollection(productsDatabase dataList)
     {

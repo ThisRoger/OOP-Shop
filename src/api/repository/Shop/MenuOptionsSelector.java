@@ -31,7 +31,7 @@ public class MenuOptionsSelector
                     case 2 -> itemInfo.showList(database);
                     case 3 -> new NewProductSelection().addNewProduct(config.setSelection(scanner), config, database, scanner);
                     case 4 -> new ItemEraser().singleDeletion(database, itemInfo, scanner);
-                    case 5 -> new DatabaseInformation().callInformation(database);
+                    case 5 -> new DatabaseInformationPrinter().databaseStatusCall(database);
                     case 6 -> new ItemEditor().selectEditableItem(database, itemInfo, scanner, config);
             case 7 -> {
                 return false;
