@@ -1,9 +1,10 @@
 package api.repository.functions;
 
 
-public class CreateId
+public class ProductIdentityGenerator
 {
     private static int id = 1001;
+
     public static int newId()
     {
         return id++;

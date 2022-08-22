@@ -1,13 +1,13 @@
 package api.repository.functions;
 
 import api.models.Type;
-import api.repository.Database;
+import api.repository.productsDatabase;
 import java.util.Scanner;
 
 
-public class EditItem
+public class ItemEditor
 {
-    public void selectEditableItem(Database database, ProductInformation itemInfo, Scanner scanner, NewItemConfig config)
+    public void selectEditableItem(productsDatabase database, ProductInformationPrinter itemInfo, Scanner scanner, NewProductCreator config)
     {
         itemInfo.showList(database);
         System.out.print("\n-------------------------------------------------------");
@@ -19,9 +19,9 @@ public class EditItem
         {
             System.out.print("\nSelect which item ID do you want to edit: ");
             item = scanner.nextInt();
-            for (int i = 1000; i <= (999+(database.dataBaseList.size())); i++)
+            for (int i = 1000; i <= (999+(database.products.size())); i++)
             {
-                if (item == database.dataBaseList.get((i - 1000)).getId())  // checks if ID exists in database list
+                if (item == database.products.get((i - 1000)).getId())  // checks if ID exists in database list
                 {
                     editSelectedItem((i-1000), database, scanner, config);      // passes index to next function
                     isEditable = false;
@@ -34,11 +34,11 @@ public class EditItem
         }
     }
 
-    void editSelectedItem(int selection, Database database, Scanner scanner, NewItemConfig config)
+    void editSelectedItem(int selection, productsDatabase database, Scanner scanner, NewProductCreator config)
     {
-        database.dataBaseList.get(selection).setName(config.setProductName(scanner));
-        database.dataBaseList.get(selection).setType(Type.valueOf(config.setProductType(scanner)));
-        database.dataBaseList.get(selection).setPrice(config.setProductPrice(scanner));
+        database.products.get(selection).setName(config.setProductName(scanner));
+        database.products.get(selection).setType(Type.valueOf(config.setProductType(scanner)));
+        database.products.get(selection).setPrice(config.setProductPrice(scanner));
 
         System.out.print("\n\nItem was updated successfully!");
     }

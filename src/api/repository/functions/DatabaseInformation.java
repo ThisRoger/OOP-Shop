@@ -2,42 +2,42 @@ package api.repository.functions;
 
 
 import api.models.Type;
-import api.repository.Database;
+import api.repository.productsDatabase;
 
 public class DatabaseInformation
 {
-    public void callInformation(Database database)
+    public void callInformation(productsDatabase database)
     {
 
-        System.out.printf("\nAmount of items in shop: %d" ,database.dataBaseList.size());
+        System.out.printf("\nAmount of items in shop: %d" ,database.products.size());
         int worth=0;
-        for (int i = 0; i <= (database.dataBaseList.size()-1); i++)
+        for (int i = 0; i <= (database.products.size()-1); i++)
         {
-            worth+= database.dataBaseList.get(i).getPrice();
+            worth+= database.products.get(i).getPrice();
         }
 
         int clothesAmount = 0;
-        for (int i = 0; i <= (database.dataBaseList.size()-1); i++)
+        for (int i = 0; i <= (database.products.size()-1); i++)
         {
-            if(database.dataBaseList.get(i).getType().equals(Type.CLOTHING))
+            if(database.products.get(i).getType().equals(Type.CLOTHING))
             {
                 clothesAmount++;
             }
         }
 
         int foodAmount = 0;
-        for (int i = 0; i <= (database.dataBaseList.size()-1); i++)
+        for (int i = 0; i <= (database.products.size()-1); i++)
         {
-            if(database.dataBaseList.get(i).getType().equals(Type.FOOD))
+            if(database.products.get(i).getType().equals(Type.FOOD))
             {
                 foodAmount++;
             }
         }
 
         int utilitiesAmount = 0;
-        for (int i = 0; i <= (database.dataBaseList.size()-1); i++)
+        for (int i = 0; i <= (database.products.size()-1); i++)
         {
-            if(database.dataBaseList.get(i).getType().equals(Type.UTILITIES))
+            if(database.products.get(i).getType().equals(Type.UTILITIES))
             {
                 utilitiesAmount++;
             }

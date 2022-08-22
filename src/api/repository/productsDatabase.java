@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Database
+public class productsDatabase
 {
-    public List<Product> dataBaseList = new ArrayList<>();   // collection or list
+    public List<Product> products = new ArrayList<>();   // product list
+
 }

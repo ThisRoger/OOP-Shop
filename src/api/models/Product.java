@@ -1,6 +1,6 @@
 package api.models;
 
-import api.repository.functions.CreateId;
+import api.repository.functions.ProductIdentityGenerator;
 
 
 public abstract class Product
@@ -12,7 +12,7 @@ public abstract class Product
 
     public Product(String name, Type type, double price)
     {
-        setId(CreateId.newId());
+        setId(ProductIdentityGenerator.newId());
         this.name = name;
         this.type = type;
         this.price = price;

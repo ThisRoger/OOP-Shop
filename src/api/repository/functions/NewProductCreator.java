@@ -4,7 +4,7 @@ import java.util.Scanner;
 import api.models.Type;
 
 
-public class NewItemConfig
+public class NewProductCreator
 {
 
      public int setSelection(Scanner scanner)    // setter, chooses which item is to be added

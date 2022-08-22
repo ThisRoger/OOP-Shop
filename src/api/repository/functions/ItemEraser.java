@@ -1,31 +1,31 @@
 package api.repository.functions;
 
-import api.repository.Database;
+import api.repository.productsDatabase;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 
-public class DeleteItem
+public class ItemEraser
 {
-    public void shoppingDeletion(Database database, List<Integer> shopping)
+    public void shoppingDeletion(productsDatabase database, List<Integer> shopping)
     {
         Collections.sort(shopping);
 
         for (int i = (shopping.size()-1); i >= 0; i--)
         {
-            for (int j = (database.dataBaseList.size()-1); j >= 0 ; j--)
+            for (int j = (database.products.size()-1); j >= 0 ; j--)
             {
-                if (shopping.get(i).equals(database.dataBaseList.get(j).getId()))
+                if (shopping.get(i).equals(database.products.get(j).getId()))
                 {
-                    database.dataBaseList.remove(j);
+                    database.products.remove(j);
                 }
             }
         }
 
     }
 
-    public void singleDeletion(Database database, ProductInformation itemInfo, Scanner scanner)
+    public void singleDeletion(productsDatabase database, ProductInformationPrinter itemInfo, Scanner scanner)
     {
         itemInfo.showList(database);
         System.out.print("\n-------------------------------------------------------");
@@ -37,11 +37,11 @@ public class DeleteItem
         {
             System.out.print("\nSelect which item ID do you want to delete: ");
             item = scanner.nextInt();
-            for (int i = 1000; i <= (999+(database.dataBaseList.size())); i++)
+            for (int i = 1000; i <= (999+(database.products.size())); i++)
             {
-                if (item == database.dataBaseList.get((i-1000)).getId())  // checks if ID exists in database list
+                if (item == database.products.get((i-1000)).getId())  // checks if ID exists in database list
                 {
-                    database.dataBaseList.remove(i-1000);
+                    database.products.remove(i-1000);
                     System.out.print("\nItem successfully deleted.");
                     isDeletable = true;
                 }
