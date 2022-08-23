@@ -1,19 +1,20 @@
 package api.repository.Shop;
 
-import api.repository.productsDatabase;
+import api.models.Product;
 import api.repository.functions.ProductInformationPrinter;
+import api.repository.functions.ScannerTypeSelector;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 
 public class ShoppingBasket
 {
-    List<Integer> shopping = new ArrayList<Integer>();
 
-    void shopping(productsDatabase database, ProductInformationPrinter itemInfo, Scanner scanner)
+    List<Integer> shopping = new ArrayList<>();
+
+    void shopping(List<Product> databaseList, ProductInformationPrinter itemInfo, ScannerTypeSelector userInput)
     {
-        itemInfo.showList(database);
+        itemInfo.showList(databaseList);
 
         boolean isBrowsing = true;
         boolean canAddItem;
@@ -26,17 +27,16 @@ public class ShoppingBasket
         while(isBrowsing)
         {
             System.out.print("\nPlease input item ID that you wish to buy: ");
-            chosenId = scanner.nextInt();   //input ID
+            chosenId = userInput.selectProductId();   //input ID
             canAddItem = true;
             wasItemFound = true;
 
-            for (int i = 1000; i <= (999+(database.products.size())); i++)
+            for (int i = 1000; i <= (999+(databaseList.size())); i++)
             {
-                    if (chosenId == database.products.get((i-1000)).getId())  // checks if ID exists in database list
+                    if (chosenId == databaseList.get((i-1000)).getId())  // checks if ID exists in database list
                     {
-                        for (int j = 0; j < (shopping.size()); j++)
-                        {
-                            if (chosenId == shopping.get(j))   // checks if ID exists in shopping list
+                        for (Integer integer : shopping) {
+                            if (chosenId == integer)   // checks if ID exists in shopping list
                             {
                                 System.out.print("\nError, item already in shopping list!");
                                 canAddItem = false;
@@ -58,12 +58,7 @@ public class ShoppingBasket
                 System.out.print("\nError, item not found!");
             }
 
-            do  // checks if user wishes to continue shopping
-            {
-                System.out.print("\nContinue shopping?\nYES or NO:  ");
-                continueShopping = scanner.next();
-                continueShopping = continueShopping.toUpperCase();
-            }while (!continueShopping.equals("YES") && !continueShopping.equals("NO"));
+            continueShopping = userInput.continueShopping();
 
             if (continueShopping.equals("NO"))
             {
@@ -73,7 +68,7 @@ public class ShoppingBasket
 
                     CheckoutStation checkout = new CheckoutStation();
 
-                    double basketSum = checkout.sumUp(database, shopping);
+                    double basketSum = checkout.sumUp(databaseList, shopping);
                     System.out.printf("\nTotal sum: %.2fPLN", basketSum);
                     System.out.print("\n\nTransaction completed! Thank you for shopping at Tesco!\n\n");
                 }

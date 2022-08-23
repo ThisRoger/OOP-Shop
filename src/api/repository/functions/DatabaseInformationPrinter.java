@@ -2,19 +2,17 @@ package api.repository.functions;
 
 import api.models.Product;
 import api.models.Type;
-import api.repository.productsDatabase;
-
 import java.util.List;
 
 
 public class DatabaseInformationPrinter
 {
-    int warehouseClothesStatus(List<Product> productsList)
+    int warehouseClothesStatus(List<Product> productList)
     {
         int clothesAmount = 0;
-        for (int i = 0; i <= (productsList.size()-1); i++)
+        for (int i = 0; i <= (productList.size()-1); i++)
         {
-            if(productsList.get(i).getType().equals(Type.CLOTHING))
+            if(productList.get(i).getType().equals(Type.CLOTHING))
             {
                 clothesAmount++;
             }
@@ -22,12 +20,12 @@ public class DatabaseInformationPrinter
         return clothesAmount;
     }
 
-    int warehouseFoodStatus(List<Product> productsList)
+    int warehouseFoodStatus(List<Product> productList)
     {
         int foodAmount = 0;
-        for (int i = 0; i <= (productsList.size()-1); i++)
+        for (int i = 0; i <= (productList.size()-1); i++)
         {
-            if(productsList.get(i).getType().equals(Type.FOOD))
+            if(productList.get(i).getType().equals(Type.FOOD))
             {
                 foodAmount++;
             }
@@ -35,12 +33,12 @@ public class DatabaseInformationPrinter
         return foodAmount;
     }
 
-    int warehouseUtilitiesStatus(List<Product> productsList)
+    int warehouseUtilitiesStatus(List<Product> productList)
     {
         int utilitiesAmount = 0;
-        for (int i = 0; i <= (productsList.size()-1); i++)
+        for (int i = 0; i <= (productList.size()-1); i++)
         {
-            if(productsList.get(i).getType().equals(Type.UTILITIES))
+            if(productList.get(i).getType().equals(Type.UTILITIES))
             {
                 utilitiesAmount++;
             }

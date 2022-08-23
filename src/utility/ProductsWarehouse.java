@@ -1,7 +1,7 @@
 package utility;
 import api.models.*;
 import api.models.Type;
-import api.repository.productsDatabase;
+import api.repository.productDatabase;
 
 /*
 * This class adds 7 items to the Database List, which allows the user to do some shopping without the need  of adding
@@ -10,7 +10,7 @@ import api.repository.productsDatabase;
 
 public class ProductsWarehouse
 {
-    public static void testCollection(productsDatabase dataList)
+    public static void testCollection(productDatabase dataList)
     {
         dataList.products.add(new Eggs("Świeże Jajca marki Iks De", Type.FOOD, 5.99));
 

@@ -1,7 +1,6 @@
 package api.repository.Shop;
 
-import api.repository.productsDatabase;
-import java.util.Scanner;
+import api.repository.productDatabase;
 import api.repository.functions.*;
 import utility.ProductsWarehouse;    // import for testing
 
@@ -9,17 +8,15 @@ import utility.ProductsWarehouse;    // import for testing
 public class Shop
 {
     ProductInformationPrinter itemInfo;
-    NewProductCreator itemCreate;
-    Scanner scanner;
-    productsDatabase database;
+    productDatabase database;
     MenuOptionsSelector menu;
+    ScannerTypeSelector userInput;
 
     public Shop()
     {
         itemInfo = new ProductInformationPrinter();
-        itemCreate = new NewProductCreator();
-        scanner = new Scanner(System.in);
-        database = new productsDatabase();
+        database = new productDatabase();
+        userInput = new ScannerTypeSelector();
         menu = new MenuOptionsSelector();
     }
 
@@ -31,8 +28,7 @@ public class Shop
 
         while(isShopping)
         {
-            isShopping = menu.menuSelectionAction(menu.MenuSelection(scanner), database, itemInfo, scanner, itemCreate,
-                    database.products);
+            isShopping = menu.menuSelectionAction(userInput.chooseMenuSelectionOption(), itemInfo, database.products, userInput);
         }
         System.out.println("Thanks for Shopping brah <3");
     }
