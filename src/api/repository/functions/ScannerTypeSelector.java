@@ -20,12 +20,12 @@ public class ScannerTypeSelector {
             try {
                 thisNumber = Double.parseDouble(userInput.next());
             } catch (NumberFormatException error) {
-                System.out.print("\nError, input not recognized, try again.\nInput: ");
+                System.out.print("Error, input not recognized, try again.\nInput: ");
                 continue;
             }
             if (thisNumber <= 0)
             {
-                System.out.print("\nError, incorrect number, try again.\nInput: ");
+                System.out.print("Error, invalid number, try again.\nInput: ");
             }
         }
         while(thisNumber <= 0);
@@ -73,6 +73,7 @@ public class ScannerTypeSelector {
     {
         {
             String name;
+            name = userInput.nextLine();    // don't delete this, else the lower sout will print twice
             do
             {
                 System.out.print("\nPlease input the product name: ");
@@ -102,16 +103,19 @@ public class ScannerTypeSelector {
     public int newItemSelection()    // selects which item should be added
     {
         int itemSelection;
-        System.out.println("Select which product do you want to add:\n\nEggs: 1           Bread: 2\n");
-        System.out.println("Shirt: 3          Trousers: 4\n");
-        System.out.println("Pencil: 5         Pen: 6\n");
-        System.out.println("Calculator: 7\n");
-        System.out.print("Your input: ");
+        System.out.print("\nSelect which product do you want to add:\n\nEggs:       1        Bread:      2\n");
+        System.out.print("Shirt:      3        Trousers:   4\n");
+        System.out.print("Pencil:     5        Pen:        6\n");
+        System.out.print("Calculator: 7\n");
+        System.out.print("\nYour input: ");
 
         do
         {
             itemSelection = (int) readUserNumberInput();
-
+            if (itemSelection > 7)
+            {
+                System.out.print("Error, invalid number, try again.\nInput: ");
+            }
 
         }while (itemSelection > 7);
 

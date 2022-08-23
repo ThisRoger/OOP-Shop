@@ -28,7 +28,7 @@ public class ItemEditor
             }
             if(isEditable)  // Item ID wasn't found
             {
-                System.out.print("\nError, item not found!");
+                System.out.println("Error, item not found!");
             }
         }
     }

@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ItemEraser
 {
-    public void shoppingDeletion(List<Product> databaseList, List<Integer> shopping)
+    public void deleteItemsAfterShopping(List<Product> databaseList, List<Integer> shopping)
     {
         Collections.sort(shopping);
 
@@ -34,7 +34,7 @@ public class ItemEraser
 
         while(!isDeletable)
         {
-            System.out.print("\nSelect which item ID do you want to delete: ");
+            System.out.print("\nSelect which item ID do you want to delete.\nInput: ");
             item = userInput.selectProductId();
             for (int i = 1000; i <= (999+(productList.size())); i++)
             {
@@ -45,13 +45,10 @@ public class ItemEraser
                     isDeletable = true;
                 }
             }
+            if (!isDeletable)
+            {
+                System.out.println("Error, item not found!");
+            }
         }
-
-
-
-
-
-
-
     }
 }
