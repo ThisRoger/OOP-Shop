@@ -20,8 +20,8 @@ public class CheckoutStation
                 }
             }
         }
-        ItemEraser del = new ItemEraser();
-        del.deleteItemsAfterShopping(databaseList, shopping);
+
+        new ItemEraser().deleteItemsAfterShopping(databaseList, shopping);
         return totalSum;
     }
 }

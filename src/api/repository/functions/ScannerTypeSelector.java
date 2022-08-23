@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 
 public class ScannerTypeSelector {
-    Scanner userInput;
 
+    Scanner userInput;
 
     public ScannerTypeSelector() {
         userInput = new Scanner(System.in);

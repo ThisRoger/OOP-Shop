@@ -1,21 +1,20 @@
 package api.repository.Shop;
 
-import api.repository.productDatabase;
+import api.repository.ProductDatabase;
 import api.repository.functions.*;
 import utility.ProductsWarehouse;    // import for testing
 
 
 public class Shop
 {
-    ProductInformationPrinter itemInfo;
-    productDatabase database;
-    MenuOptionsSelector menu;
-    ScannerTypeSelector userInput;
+    private final ProductInformationPrinter itemInfo;
+    private final ProductDatabase database;
+    private final MenuOptionsSelector menu;
+    private final ScannerTypeSelector userInput;
 
-    public Shop()
     {
         itemInfo = new ProductInformationPrinter();
-        database = new productDatabase();
+        database = new ProductDatabase();
         userInput = new ScannerTypeSelector();
         menu = new MenuOptionsSelector();
     }
@@ -28,7 +27,7 @@ public class Shop
 
         while(isShopping)
         {
-            isShopping = menu.menuSelectionAction(userInput.chooseMenuSelectionOption(), itemInfo, database.products, userInput);
+            isShopping = menu.menuSelectionAction(userInput.chooseMenuSelectionOption(), itemInfo, database.getProducts(), userInput);
         }
         System.out.println("Thanks for Shopping brah <3");
     }
