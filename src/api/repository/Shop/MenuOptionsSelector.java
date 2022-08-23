@@ -1,7 +1,10 @@
 package api.repository.Shop;
 
+import api.models.Product;
 import api.repository.productsDatabase;
 import api.repository.functions.*;
+
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -23,7 +26,7 @@ public class MenuOptionsSelector
     }
 
     boolean menuSelectionAction(int menuSelection, productsDatabase database, ProductInformationPrinter itemInfo,
-                                Scanner scanner, NewProductCreator config)
+                                Scanner scanner, NewProductCreator config, List<Product> productsList)
     {
         switch (menuSelection)
         {
@@ -31,7 +34,7 @@ public class MenuOptionsSelector
                     case 2 -> itemInfo.showList(database);
                     case 3 -> new NewProductSelection().addNewProduct(config.setSelection(scanner), config, database, scanner);
                     case 4 -> new ItemEraser().singleDeletion(database, itemInfo, scanner);
-                    case 5 -> new DatabaseInformationPrinter().databaseStatusCall(database);
+                    case 5 -> new DatabaseInformationPrinter().databaseStatusCall(productsList);
                     case 6 -> new ItemEditor().selectEditableItem(database, itemInfo, scanner, config);
             case 7 -> {
                 return false;

@@ -9,4 +9,9 @@ public class productsDatabase
 {
     public List<Product> products = new ArrayList<>();   // product list
 
+    public List<Product> getProducts()
+    {
+        return products;
+    }
+
 }

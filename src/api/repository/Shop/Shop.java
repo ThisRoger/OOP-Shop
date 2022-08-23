@@ -31,7 +31,8 @@ public class Shop
 
         while(isShopping)
         {
-            isShopping = menu.menuSelectionAction(menu.MenuSelection(scanner), database, itemInfo, scanner, itemCreate);
+            isShopping = menu.menuSelectionAction(menu.MenuSelection(scanner), database, itemInfo, scanner, itemCreate,
+                    database.products);
         }
         System.out.println("Thanks for Shopping brah <3");
     }
