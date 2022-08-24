@@ -8,7 +8,7 @@ import api.repository.ProductDatabase;
 * new items manually (still possible through the shop menu)
 */
 
-public class ProductsWarehouse
+public class ProductDelivery
 {
     public static void testCollection(ProductDatabase dataList)
     {

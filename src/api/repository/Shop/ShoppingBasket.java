@@ -1,6 +1,6 @@
 package api.repository.Shop;
 
-import api.models.Product;
+import api.repository.ProductDatabase;
 import api.repository.functions.ProductInformationPrinter;
 import api.repository.functions.ScannerTypeSelector;
 import java.util.ArrayList;
@@ -12,9 +12,9 @@ public class ShoppingBasket
 
     List<Integer> shopping = new ArrayList<>();
 
-    void shopping(List<Product> databaseList, ProductInformationPrinter itemInfo, ScannerTypeSelector userInput)
+    void shopping(ProductDatabase products, ProductInformationPrinter itemInfo, ScannerTypeSelector userInput)
     {
-        itemInfo.showList(databaseList);
+        itemInfo.showList(products.getProducts());
 
         boolean isBrowsing = true;
         boolean canAddItem;
@@ -31,9 +31,9 @@ public class ShoppingBasket
             canAddItem = true;
             wasItemFound = true;
 
-            for (int i = 1000; i <= (999+(databaseList.size())); i++)
+            for (int i = 1000; i <= (999+(products.getProducts().size())); i++)
             {
-                    if (chosenId == databaseList.get((i-1000)).getId())  // checks if ID exists in database list
+                    if (chosenId == products.getProducts().get((i-1000)).getId())  // checks if ID exists in database list
                     {
                         for (Integer integer : shopping) {
                             if (chosenId == integer)   // checks if ID exists in shopping list
@@ -68,7 +68,7 @@ public class ShoppingBasket
 
                     CheckoutStation checkout = new CheckoutStation();
 
-                    double basketSum = checkout.sumUp(databaseList, shopping);
+                    double basketSum = checkout.sumUp(products.getProducts(), shopping);
                     System.out.printf("\nTotal sum: %.2fPLN", basketSum);
                     System.out.print("\n\nTransaction completed! Thank you for shopping at Tesco!\n\n");
                 }

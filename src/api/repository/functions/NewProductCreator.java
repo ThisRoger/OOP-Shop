@@ -1,35 +1,35 @@
 package api.repository.functions;
 
 import api.models.*;
-import java.util.List;
+import api.repository.ProductDatabase;
 
 
 public class NewProductCreator
 {
-    public void addNewProduct(int selectedProduct, ScannerTypeSelector userInput, List<Product> productList)
+    public void addNewProduct(int selectedProduct, ScannerTypeSelector userInput, ProductDatabase products)
     {
         // creating and adding the selected product
         switch (selectedProduct) {
             case 1 -> //Eggs
-                    productList.add( new Eggs
+                    products.setProducts( new Eggs
                             (userInput.setProductName(), userInput.setProductType(), userInput.setProductPrice()) );
             case 2 -> // Bread
-                    productList.add( new Bread
+                    products.setProducts( new Bread
                             (userInput.setProductName(), userInput.setProductType(), userInput.setProductPrice()) );
             case 3 -> // Shirt
-                    productList.add( new Shirt
+                    products.setProducts( new Shirt
                             (userInput.setProductName(), userInput.setProductType(), userInput.setProductPrice()) );
             case 4 -> // Trousers
-                    productList.add( new Trousers
+                    products.setProducts( new Trousers
                             (userInput.setProductName(), userInput.setProductType(), userInput.setProductPrice()) );
             case 5 -> // Pencil
-                    productList.add( new Pencil
+                    products.setProducts( new Pencil
                             (userInput.setProductName(), userInput.setProductType(), userInput.setProductPrice()) );
             case 6 -> // Pen
-                    productList.add( new Pen
+                    products.setProducts( new Pen
                             (userInput.setProductName(), userInput.setProductType(), userInput.setProductPrice()) );
             case 7 -> // Calculator
-                    productList.add( new Calculator
+                    products.setProducts( new Calculator
                             (userInput.setProductName(), userInput.setProductType(), userInput.setProductPrice()) );
         }
     }
